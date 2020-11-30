@@ -26,7 +26,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
     dnsutils \
     iputils-ping \
     iputils-arping \
-    iputils-tracepath
+    iputils-tracepath \
+    net-tools
 
 
     # Clean up
