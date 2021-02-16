@@ -9,11 +9,11 @@ WORKDIR /root
 # ENV http_proxy http://172.16.17.4:3128
 # ENV https_proxy http://172.16.17.4:3128
 
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
+# RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
 # RUN  apt-get clean && apt-get autoremove -y && rm -rf /var/lib/apt/lists/*
 
 # Install goodies
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && DEBIAN_FRONTEND=noninteractive apt-get upgrade -y && apt-get -y install \
     wget \
     curl \
     telnet \
