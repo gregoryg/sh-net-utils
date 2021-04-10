@@ -31,6 +31,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && DEBIAN_FRONTEND=noninteract
     net-tools \
     openssh-client \
     sudo \
+&& echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers \
 && useradd -m -s /bin/bash -G users,sudo gregj
 
 
