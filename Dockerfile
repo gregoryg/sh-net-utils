@@ -30,6 +30,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && DEBIAN_FRONTEND=noninteract
     iputils-tracepath \
     net-tools \
     openssh-client \
+    sudo \
 && useradd -m -s /bin/bash -G users,sudo gregj
 
 
