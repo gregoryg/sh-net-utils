@@ -24,19 +24,22 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && DEBIAN_FRONTEND=noninteract
     htop \
     python3 \
     dnsutils \
+    iproute2 \
     iputils-ping \
     iputils-arping \
     iputils-tracepath \
     net-tools \
-    openssh-client
+    openssh-client \
+&& useradd -m -s /bin/bash -G users,sudo gregj
 
 
-    # Clean up
-    RUN apt-get clean && apt-get autoremove -y && rm -rf /var/lib/apt/lists/*
-    RUN rm -rf /root/* && chmod 755 /root
+# Clean up
+RUN apt-get clean && apt-get autoremove -y && rm -rf /var/lib/apt/lists/*
+RUN rm -rf /root/* && chmod 755 /root
 
 
-USER root
-WORKDIR /root
+
+USER gregj
+WORKDIR /home/gregj
 # CMD ["notebook", "--no-browser", "--ip=0.0.0.0", "--port=8888"]
 # ENTRYPOINT ["/bin/bash"]
