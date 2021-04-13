@@ -29,6 +29,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && DEBIAN_FRONTEND=noninteract
     iputils-arping \
     iputils-tracepath \
     net-tools \
+    procps \
     openssh-client \
     sudo \
 && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers \
